@@ -1,0 +1,201 @@
+@import 'variables';
+@import 'fonts';
+
+body {
+  background: $bg;
+}
+
+hr {
+  background: $yellow;
+}
+
+.banner {
+  padding: 1.6rem 0;
+  box-shadow: 0 0 2rem 0 rgba($text, 0.7);
+  background: $text;
+
+  h1 {
+    position: relative;
+    display: inline-block;
+    font-size: 4.8rem;
+    color: $white;
+
+    strong {
+      font-size: 3.6rem;
+      color: $yellow;
+    }
+
+    &:before {
+      content: 'React component state tutorial';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: -0.8rem;
+      font-size: 0.6rem;
+      border-top: solid 0.2rem $white;
+      padding: 0.4rem 0.8rem 0.4rem 0.7rem;
+      background: $text;
+      font-weight: 800;
+    }
+  }
+}
+
+.movies-info {
+  margin-top: 8rem;
+
+  .card-columns {
+    text-align: center;
+
+    .card {
+      border: 0;
+      border-radius: 2.8rem;
+      box-shadow: 0 0 3rem 0 rgba($text, 0.7);
+      margin: 4rem 0 2rem 0;
+
+      &.good {
+        .card-body {
+          background: $yellow;
+
+          h5 {
+            color: $white;
+          }
+
+          hr {
+            background: $white;
+          }
+
+          .card-text {
+            .label {
+              &.gray,
+              &.blue,
+              &.green,
+              &.yellow,
+              &.red {
+                border: solid 0.1rem $white;
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+
+      .delete-card {
+        position: absolute;
+        border: solid 0.2rem $white;
+        background: $text;
+        color: $white;
+        top: -1rem;
+        right: 2rem;
+        z-index: 1;
+        padding: 0.4rem 1.6rem;
+        border-radius: 2rem;
+        transition: all 100ms ease;
+
+        &:hover {
+          background: $yellow;
+        }
+      }
+
+      .card-header {
+        height: 45rem;
+        background-color: $text;
+        position: relative;
+        overflow: hidden;
+        border-radius: 2.4rem 2.4rem 0 0;
+      }
+
+      .card-body {
+        background: $text;
+        color: $white;
+        text-align: left;
+        padding: 3rem;
+        border-top: solid 0.1rem $white;
+        position: relative;
+        border-radius: 0 0 2.4rem 2.4rem;
+
+        .rates {
+          position: absolute;
+          background: $text;
+          border: solid 0.2rem $white;
+          padding: 1rem;
+          border-radius: 50%;
+          top: -4rem;
+          right: 2rem;
+          width: 6rem;
+          height: 6rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.8rem;
+
+          .star {
+            color: $yellow;
+            font-size: 1rem;
+            margin-left: 0.5rem;
+          }
+        }
+
+        .card-title {
+          font-size: 2.4rem;
+          margin-bottom: 2rem;
+          color: $yellow;
+        }
+
+        .card-text {
+          font-size: 1.2rem;
+          line-height: 2rem;
+          display: flex;
+          justify-content: space-between;
+
+          small {
+            display: flex;
+
+            .label {
+              margin-left: 0.5rem;
+              display: flex;
+              padding: 0.2rem 1.6rem;
+              border-radius: 2.4rem;
+              justify-content: center;
+              align-items: center;
+              margin-bottom: 0.5rem;
+              font-weight: 700;
+
+              &.gray {
+                border: solid 0.1rem $bg;
+              }
+
+              &.blue {
+                border: solid 0.1rem $blue;
+                color: $blue;
+              }
+
+              &.green {
+                border: solid 0.1rem $green;
+                color: $green;
+              }
+
+              &.yellow {
+                border: solid 0.1rem $yellow;
+                color: $yellow;
+              }
+
+              &.red {
+                border: solid 0.1rem $red;
+                color: $red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+  .actors {
+    span {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+  }
+}
