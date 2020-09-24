@@ -1,18 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import data from '../data/films.json'
-
-const getRates = (arr) => {
-    return (arr.reduce((a, b) => a + b) / arr.length).toFixed(1)
-}
 
 const FilmCard = () => {
 
-    const renderCards = data.map((movie, i) => {
+    const getRates = (arr) => {
+        return (arr.reduce((a, b) => a + b) / arr.length).toFixed(1)
+    }
+
+    const [dataInfo, setData] = useState(data)
+
+    const removeCard = (id) => {
+        console.log(id)
+        setData(dataInfo.filter(el => el.id !== id))
+    }
+
+    const renderCards = dataInfo.map((movie) => {
 
         if (getRates(movie.ratings) > 6.0) {
             return (
-                <div className="card col-11 p-0 good" key={i}>
-                    <button className="delete-card">remove film</button>
+                <div className="card col-11 p-0 good" key={movie.id}>
+                    <button className="delete-card" onClick={() => removeCard(movie.id)}>remove film</button>
                     <div className="card-header" style={{background: `url(${movie.posterurl}) #333 no-repeat center center / cover`}}></div>
                     <div className="card-body">
                         <span className="rates">{getRates(movie.ratings)}<span className="star">★</span></span>
@@ -49,8 +56,8 @@ const FilmCard = () => {
                 </div>)
         } else {
             return (
-                <div className="card col-12 p-0" key={i}>
-                    <button className="delete-card">remove film</button>
+                <div className="card col-12 p-0" key={movie.id} >
+                    <button className="delete-card" onClick={() => removeCard(movie.id)}>remove film</button>
                     <div className="card-header" style={{background: `url(${movie.posterurl}) #333 no-repeat center center / cover`}}></div>
                     <div className="card-body">
                         <span className="rates">{getRates(movie.ratings)}<span className="star">★</span></span>
