@@ -18,7 +18,7 @@ const FilmCard = () => {
 
         if (getRates(movie.ratings) > 6.0) {
             return (
-                <div className="card col-11 p-0 good" key={movie.id}>
+                <div className="card col-1 p-0 good" key={movie.id}>
                     <button className="delete-card" onClick={() => removeCard(movie.id)}>remove film</button>
                     <div className="card-header" style={{background: `url(${movie.posterurl}) #333 no-repeat center center / cover`}}></div>
                     <div className="card-body">
